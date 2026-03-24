@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;App Mi Sonido - Pro&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--color-principal: #00ff41;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>--fondo-oscuro: #0b0b0b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--tarjetas: #181818;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'Arial Black', Gadget, sans-serif; background-color: var(--fondo-oscuro); color: #ffffff; padding: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container { max-width: 600px; margin: auto; background: var(--tarjetas); padding: 30px; border-radius: 15px; border: 2px solid var(--color-principal); box-shadow: 0 0 20px rgba(0, 255, 65, 0.2); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2, h3 { text-align: center; color: var(--color-principal); text-transform: uppercase; letter-spacing: 2px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label { display: block; margin-top: 15px; font-size: 14px; color: #ccc; font-family: sans-serif;}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #333; background: #000; color: var(--color-principal); font-weight: bold; box-sizing: border-box; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button { width: 100%; padding: 15px; background: var(--color-principal); border: none; color: #000; font-weight: 900; cursor: pointer; border-radius: 8px; text-transform: uppercase; margin-top: 15px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover { transform: scale(1.02); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.event-card { background: #222; margin-top: 15px; padding: 20px; border-radius: 10px; border-right: 4px solid var(--color-principal); position: relative; font-family: sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-delete { position: absolute; top: 15px; right: 15px; background: #c0392b; color: white; width: 35px; height: 35px; border-radius: 50%; padding: 0;}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.wa-btn { background: #25D366; color: white; width: auto; padding: 10px 15px; font-size: 14px; margin-top: 15px; display: inline-block; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;🎧 Mi Sonido Pro&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label&gt;Evento:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" id="nombreEvento" placeholder="Ej: Boda Familia Sánchez"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="date" id="fechaEvento"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="text" id="lugarEvento" placeholder="Ciudad / Municipio"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;🚚 Costos y Ganancias&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label&gt;Distancia total (Km ida y vuelta):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="number" id="distancia" placeholder="Ej: 100" oninput="calcularTotal()"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="display: flex; gap: 10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="flex: 1;"&gt;&lt;label&gt;Rendimiento (Km/L):&lt;/label&gt;&lt;input type="number" id="rend" placeholder="Ej: 8" oninput="calcularTotal()"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="flex: 1;"&gt;&lt;label&gt;Precio Litro ($):&lt;/label&gt;&lt;input type="number" id="precio" placeholder="Ej: 24" oninput="calcularTotal()"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label&gt;Casetas ($):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="number" id="casetas" placeholder="Total peajes" oninput="calcularTotal()"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label&gt;Staff (Ayudantes x Pago):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="display: flex; gap: 10px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="number" id="numStaff" placeholder="Cantidad" oninput="calcularTotal()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="number" id="pagoStaff" placeholder="$ por cada uno" oninput="calcularTotal()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;hr style="border: 0; border-top: 1px dashed var(--color-principal); margin: 20px 0;"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;label style="color: var(--color-principal); font-weight: bold; font-size: 16px;"&gt;¿Cuánto cobrarás en total al cliente? ($):&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;input type="number" id="cobroTotal" placeholder="Ej: 8000" oninput="calcularTotal()" style="border: 2px solid var(--color-principal);"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="previoTotal" style="text-align: center; margin: 25px 0; font-size: 1.2em; font-family: sans-serif;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="color: #ccc;"&gt;Gastos Operativos: $0.00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="color: var(--color-principal); font-size: 1.5em; font-weight: bold; margin-top: 10px;"&gt;Ganancia Libre: $0.00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="guardarEvento()"&gt;💾 Guardar y Agendar&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Próximos Eventos&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="listaEventos"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.addEventListener('DOMContentLoaded', mostrarEventos);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function calcularTotal() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const d = parseFloat(document.getElementById('distancia').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const r = parseFloat(document.getElementById('rend').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const p = parseFloat(document.getElementById('precio').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const c = parseFloat(document.getElementById('casetas').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const nS = parseInt(document.getElementById('numStaff').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const pS = parseFloat(document.getElementById('pagoStaff').value) || 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const cobro = parseFloat(document.getElementById('cobroTotal').value) || 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const gas = r &gt; 0 ? (d / r) * p : 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const staff = nS * pS;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const totalGastos = gas + c + staff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const gananciaLimpia = cobro - totalGastos;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('previoTotal').innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color: #ccc;"&gt;Gastos Operativos: $${totalGastos.toFixed(2)}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="color: var(--color-principal); font-size: 1.5em; font-weight: bold; margin-top: 10px;"&gt;Ganancia Libre: $${gananciaLimpia.toFixed(2)}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>return { gasto: totalGastos.toFixed(2), ganancia: gananciaLimpia.toFixed(2), cobro: cobro.toFixed(2) };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function guardarEvento() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const nombre = document.getElementById('nombreEvento').value;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fecha = document.getElementById('fechaEvento').value;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const lugar = document.getElementById('lugarEvento').value;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const finanzas = calcularTotal();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(!nombre || !fecha) return alert("Por favor pon al menos el nombre y la fecha.");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const nuevo = { id: Date.now(), nombre, fecha, lugar, gasto: finanzas.gasto, ganancia: finanzas.ganancia, cobro: finanzas.cobro };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let eventos = JSON.parse(localStorage.getItem('sonidoApp')) || [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>eventos.push(nuevo);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem('sonidoApp', JSON.stringify(eventos));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('input').forEach(i =&gt; i.value = '');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>calcularTotal();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mostrarEventos();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function mostrarEventos() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const div = document.getElementById('listaEventos');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>div.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let eventos = JSON.parse(localStorage.getItem('sonidoApp')) || [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>eventos.sort((a,b) =&gt; new Date(a.fecha) - new Date(b.fecha));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>eventos.forEach(ev =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const msj = `Hola! Te comparto la cotización para tu evento:%0A*${ev.nombre}*%0A📍 Lugar: ${ev.lugar}%0A📅 Fecha: ${ev.fecha}%0A💰 Total a pagar: $${ev.cobro}%0A¡Quedo a tus órdenes!`;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.innerHTML += `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="event-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;strong style="font-size: 1.2em; color: var(--color-principal);"&gt;${ev.nombre}&lt;/strong&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div style="margin: 10px 0; color: #ccc;"&gt;📅 ${ev.fecha} | 📍 ${ev.lugar}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div style="background: #111; padding: 8px; border-radius: 5px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Cobro Cliente: $${ev.cobro}&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Gastos: -$${ev.gasto}&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong style="color: var(--color-principal);"&gt;Ganancia: $${ev.ganancia}&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="wa-btn" onclick="window.open('https://wa.me/?text=${msj}', '_blank')"&gt;📱 Enviar Cotización al Cliente&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="btn-delete" onclick="borrar(${ev.id})"&gt;×&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function borrar(id) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if(confirm("¿Seguro que quieres borrar este evento?")) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let eventos = JSON.parse(localStorage.getItem('sonidoApp'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>eventos = eventos.filter(e =&gt; e.id !== id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('sonidoApp', JSON.stringify(eventos));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mostrarEventos();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
